@@ -1,0 +1,18 @@
+
+.countryCard
+{
+    border: 1px solid black;
+    border-radius: 10px;
+
+    width: 200px;
+    height: 200px;
+    /* background: red; */
+    padding: 20px;
+    margin: 20px;
+}
+
+.cardImage
+{
+    width: 150px;
+    height: 150px;
+}
