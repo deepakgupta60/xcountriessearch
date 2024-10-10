@@ -31,15 +31,22 @@ console.log(debounce)
       
       if(debounce)
       {
-          response = await fetch(`https://restcountries.com/v3.1/name/${debounce}`)
+          response = await fetch(`https://restcountries.com/v3.1/all`)
+
+          const finalData = await response.json();
+
+          const filteredData = finalData.filter((country)=>country.name.common.toLowerCase().includes(debounce.toLowerCase()))
+          setSearchData(filteredData)
       }
       else
       {
           response = await fetch('https://restcountries.com/v3.1/all')
+          const finalData = await response.json();
+          setSearchData(finalData)
       }
       
-      const finalData = await response.json();
-      setSearchData(finalData)
+      
+      
     
     }
     catch(error)
